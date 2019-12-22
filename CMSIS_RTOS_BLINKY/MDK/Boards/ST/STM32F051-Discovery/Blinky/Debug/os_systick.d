@@ -1,0 +1,11 @@
+.\debug\os_systick.o: C:\Users\redmk\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\RTOS2\Source\os_systick.c
+.\debug\os_systick.o: C:\Users\redmk\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\RTOS2\Include\os_tick.h
+.\debug\os_systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\debug\os_systick.o: .\RTE\_Debug\RTE_Components.h
+.\debug\os_systick.o: C:\Users\redmk\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h
+.\debug\os_systick.o: C:\Users\redmk\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f051x8.h
+.\debug\os_systick.o: C:\Users\redmk\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\debug\os_systick.o: C:\Users\redmk\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\debug\os_systick.o: C:\Users\redmk\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\debug\os_systick.o: C:\Users\redmk\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\debug\os_systick.o: C:\Users\redmk\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h
