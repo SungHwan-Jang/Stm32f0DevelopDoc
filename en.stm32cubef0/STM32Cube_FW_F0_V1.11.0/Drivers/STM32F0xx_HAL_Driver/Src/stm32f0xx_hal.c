@@ -147,7 +147,7 @@ HAL_StatusTypeDef HAL_Init(void)
 
   /* Use systick as time base source and configure 1ms tick (default clock after Reset is HSI) */
 
-  HAL_InitTick(TICK_INT_PRIORITY);
+  HAL_InitTick(TICK_INT_PRIORITY); // TICK_INT_PRIORITY = 3
 
   /* Init the low level hardware */
   HAL_MspInit();
@@ -222,13 +222,16 @@ __weak void HAL_MspDeInit(void)
 __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
 {
   /*Configure the SysTick to have interrupt in 1ms time basis*/
-  if (HAL_SYSTICK_Config(SystemCoreClock / (1000U / uwTickFreq)) > 0U)
+	
+	/* SystemCoreClock = 8Mhz
+		 uwTickFreq = 1U means default 1kHz */
+  if (HAL_SYSTICK_Config(SystemCoreClock / (1000U / uwTickFreq)) > 0U) 
   {
     return HAL_ERROR;
   }
 
   /* Configure the SysTick IRQ priority */
-  if (TickPriority < (1UL << __NVIC_PRIO_BITS))
+  if (TickPriority < (1UL << __NVIC_PRIO_BITS)) //__NVIC_PRIO_BITS : Max priority coef
   {
     HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority, 0U);
     uwTickPrio = TickPriority;
