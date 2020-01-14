@@ -191,7 +191,7 @@ void HAL_NVIC_SystemReset(void)
   * @retval status:  - 0  Function succeeded.
   *                  - 1  Function failed.
   */
-uint32_t HAL_SYSTICK_Config(uint32_t TicksNumb)
+uint32_t HAL_SYSTICK_Config(uint32_t TicksNumb) //defualt Param is 8000
 {
    return SysTick_Config(TicksNumb);
 }

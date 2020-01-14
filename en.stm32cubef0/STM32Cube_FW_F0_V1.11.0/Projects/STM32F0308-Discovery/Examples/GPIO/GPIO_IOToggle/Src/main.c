@@ -60,10 +60,10 @@ int main(void)
          handled in milliseconds basis.
        - Low Level Initialization
      */
-  HAL_Init();
+  HAL_Init(); //systic init
 
   /* Configure the system clock to 48 MHz */
-  SystemClock_Config();
+  SystemClock_Config(); // Setting Clock Div. Discovery Board have only HSI and LSI
   
   /* -1- Enable each GPIO Clock (to be able to program the configuration registers) */
   LED3_GPIO_CLK_ENABLE();
@@ -112,14 +112,23 @@ static void SystemClock_Config(void)
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
   RCC_OscInitTypeDef RCC_OscInitStruct;
   
-  /* Select HSE Oscillator as PLL source */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+//  /* Select HSE Oscillator as PLL source */
+//  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+//  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+//  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+//  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+//  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
+//  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;
+//  
+	/* Select HSI Oscillator as PLL source */ //48Mhz//
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+	RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct)!= HAL_OK)
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV4;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL12;
+	
+	if (HAL_RCC_OscConfig(&RCC_OscInitStruct)!= HAL_OK)
   {
     Error_Handler();
   }
