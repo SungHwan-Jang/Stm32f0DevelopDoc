@@ -78,13 +78,6 @@
         <IsCurrentTarget>1</IsCurrentTarget>
       </OPTFL>
       <CpuCode>18</CpuCode>
-      <Books>
-        <Book>
-          <Number>0</Number>
-          <Title>STM32F0-Discovery Web Page (STM32F0-Discovery)</Title>
-          <Path>http://www.st.com/web/catalog/tools/FM116/SC959/SS1532/LN1848/PF253215</Path>
-        </Book>
-      </Books>
       <DebugOpt>
         <uSim>0</uSim>
         <uTrg>1</uTrg>
@@ -107,7 +100,10 @@
         <tRSysVw>1</tRSysVw>
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
-        <nTsel>11</nTsel>
+        <bEvRecOn>1</bEvRecOn>
+        <bSchkAxf>0</bSchkAxf>
+        <bTchkAxf>0</bTchkAxf>
+        <nTsel>6</nTsel>
         <sDll></sDll>
         <sDllPa></sDllPa>
         <sDlgDll></sDlgDll>
@@ -124,12 +120,12 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>UL2CM3</Key>
-          <Name>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F0xx_64 -FS08000000 -FL010000 -FP0($$Device:STM32F030R8$Flash\STM32F0xx_64.FLM))</Name>
+          <Name>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F0xx_64 -FS08000000 -FL010000 -FP0($$Device:STM32F030R8$CMSIS\Flash\STM32F0xx_64.FLM))</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>ST-LINKIII-KEIL_SWO</Key>
-          <Name>-U-I0 -I0 -O2254 -S0 -C0 -A0 -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD20000000 -FC1000 -FN1 -FF0STM32F0xx_64.FLM -FS08000000 -FL010000 -FP0($$Device:STM32F030R8$Flash\STM32F0xx_64.FLM)</Name>
+          <Name>-U-I0 -I0 -O2254 -S0 -C0 -A0 -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD20000000 -FC1000 -FN1 -FF0STM32F0xx_64.FLM -FS08000000 -FL010000 -FP0($$Device:STM32F030R8$CMSIS\Flash\STM32F0xx_64.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
       <Breakpoint/>
@@ -164,16 +160,26 @@
       </DebugFlag>
       <LintExecutable></LintExecutable>
       <LintConfigFile></LintConfigFile>
+      <bLintAuto>0</bLintAuto>
+      <bAutoGenD>0</bAutoGenD>
+      <LntExFlags>0</LntExFlags>
+      <pMisraName></pMisraName>
+      <pszMrule></pszMrule>
+      <pSingCmds></pSingCmds>
+      <pMultCmds></pMultCmds>
+      <pMisraNamep></pMisraNamep>
+      <pszMrulep></pszMrulep>
+      <pSingCmdsp></pSingCmdsp>
+      <pMultCmdsp></pMultCmdsp>
+      <DebugDescription>
+        <Enable>1</Enable>
+        <EnableFlashSeq>1</EnableFlashSeq>
+        <EnableLog>0</EnableLog>
+        <Protocol>2</Protocol>
+        <DbgClock>10000000</DbgClock>
+      </DebugDescription>
     </TargetOption>
   </Target>
-
-  <Group>
-    <GroupName>::CMSIS</GroupName>
-    <tvExp>0</tvExp>
-    <tvExpOptDlg>0</tvExpOptDlg>
-    <cbSel>0</cbSel>
-    <RteFlg>1</RteFlg>
-  </Group>
 
   <Group>
     <GroupName>Example/MDK-ARM</GroupName>
@@ -182,11 +188,10 @@
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
-      <GroupNumber>2</GroupNumber>
+      <GroupNumber>1</GroupNumber>
       <FileNumber>1</FileNumber>
       <FileType>2</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>startup_stm32f030x8.s</PathWithFileName>
@@ -203,11 +208,10 @@
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
-      <GroupNumber>3</GroupNumber>
+      <GroupNumber>2</GroupNumber>
       <FileNumber>2</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\..\..\..\..\Drivers\BSP\STM32F0xx-Nucleo\stm32f0xx_nucleo.c</PathWithFileName>
@@ -224,11 +228,10 @@
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
-      <GroupNumber>4</GroupNumber>
+      <GroupNumber>3</GroupNumber>
       <FileNumber>3</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Src\main.c</PathWithFileName>
@@ -237,11 +240,10 @@
       <bShared>0</bShared>
     </File>
     <File>
-      <GroupNumber>4</GroupNumber>
+      <GroupNumber>3</GroupNumber>
       <FileNumber>4</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Src\stm32f0xx_it.c</PathWithFileName>
@@ -258,11 +260,10 @@
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
-      <GroupNumber>5</GroupNumber>
+      <GroupNumber>4</GroupNumber>
       <FileNumber>5</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\readme.txt</PathWithFileName>
@@ -279,11 +280,10 @@
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
-      <GroupNumber>6</GroupNumber>
+      <GroupNumber>5</GroupNumber>
       <FileNumber>6</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Src\system_stm32f0xx.c</PathWithFileName>
@@ -300,11 +300,10 @@
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
-      <GroupNumber>7</GroupNumber>
+      <GroupNumber>6</GroupNumber>
       <FileNumber>7</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc_ex.c</PathWithFileName>
@@ -313,11 +312,10 @@
       <bShared>0</bShared>
     </File>
     <File>
-      <GroupNumber>7</GroupNumber>
+      <GroupNumber>6</GroupNumber>
       <FileNumber>8</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_cortex.c</PathWithFileName>
@@ -326,11 +324,10 @@
       <bShared>0</bShared>
     </File>
     <File>
-      <GroupNumber>7</GroupNumber>
+      <GroupNumber>6</GroupNumber>
       <FileNumber>9</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal.c</PathWithFileName>
@@ -339,11 +336,10 @@
       <bShared>0</bShared>
     </File>
     <File>
-      <GroupNumber>7</GroupNumber>
+      <GroupNumber>6</GroupNumber>
       <FileNumber>10</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc.c</PathWithFileName>
@@ -352,11 +348,10 @@
       <bShared>0</bShared>
     </File>
     <File>
-      <GroupNumber>7</GroupNumber>
+      <GroupNumber>6</GroupNumber>
       <FileNumber>11</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c</PathWithFileName>
@@ -364,6 +359,14 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
+  </Group>
+
+  <Group>
+    <GroupName>::CMSIS</GroupName>
+    <tvExp>0</tvExp>
+    <tvExpOptDlg>0</tvExpOptDlg>
+    <cbSel>0</cbSel>
+    <RteFlg>1</RteFlg>
   </Group>
 
 </ProjectOpt>

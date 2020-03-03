@@ -21,6 +21,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
+#define REGARCY 0
+
 /** @addtogroup STM32F0xx_HAL_Examples
   * @{
   */
@@ -66,29 +68,50 @@ int main(void)
   SystemClock_Config(); // Setting Clock Div. Discovery Board have only HSI and LSI
   
   /* -1- Enable each GPIO Clock (to be able to program the configuration registers) */
+	
+	#if REGARCY
   LED3_GPIO_CLK_ENABLE();
   LED4_GPIO_CLK_ENABLE();
-
+	#else
+	__HAL_RCC_GPIOC_CLK_ENABLE();
+	#endif
+	
   /* -2- Configure IOs in output push-pull mode to drive external LEDs */
   GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull  = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
 
-  GPIO_InitStruct.Pin = LED3_PIN;
+#if REGARCY
+  GPIO_InitStruct.Pin = LED3_PIN; //LED3
   HAL_GPIO_Init(LED3_GPIO_PORT, &GPIO_InitStruct);
 
-  GPIO_InitStruct.Pin = LED4_PIN;
+  GPIO_InitStruct.Pin = LED4_PIN; //LED4
   HAL_GPIO_Init(LED4_GPIO_PORT, &GPIO_InitStruct);
+#else
+	GPIO_InitStruct.Pin = GPIO_PIN_9; //LED3
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  GPIO_InitStruct.Pin = GPIO_PIN_8; //LED4
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+#endif
   /* -3- Toggle IOs in an infinite loop */
   while (1)
   {
-    HAL_GPIO_TogglePin(LED3_GPIO_PORT, LED3_PIN);
+		#if REGARCY
+		HAL_GPIO_TogglePin(LED3_GPIO_PORT, LED3_PIN);
     /* Insert delay 100 ms */
     HAL_Delay(100);
     HAL_GPIO_TogglePin(LED4_GPIO_PORT, LED4_PIN);
     /* Insert delay 100 ms */
     HAL_Delay(100);
+		#else
+    HAL_GPIO_TogglePin(LED3_GPIO_PORT, LED3_PIN);
+    /* Insert delay 100 ms */
+    HAL_Delay(1000);
+    HAL_GPIO_TogglePin(LED4_GPIO_PORT, LED4_PIN);
+    /* Insert delay 100 ms */
+    HAL_Delay(1000);
+		#endif
   }
 }
 
@@ -112,14 +135,16 @@ static void SystemClock_Config(void)
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
   RCC_OscInitTypeDef RCC_OscInitStruct;
   
-//  /* Select HSE Oscillator as PLL source */
-//  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-//  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-//  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-//  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-//  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
-//  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;
-//  
+
+	#if REGARCY
+	//  /* Select HSE Oscillator as PLL source */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;
+	#else
 	/* Select HSI Oscillator as PLL source */ //48Mhz//
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
 	RCC_OscInitStruct.HSIState = RCC_HSI_ON;
@@ -127,7 +152,7 @@ static void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV4;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL12;
-	
+	#endif
 	if (HAL_RCC_OscConfig(&RCC_OscInitStruct)!= HAL_OK)
   {
     Error_Handler();

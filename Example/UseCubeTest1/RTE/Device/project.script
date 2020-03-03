@@ -1,0 +1,4 @@
+load STM32F051R8Tx 
+project name STCubeGenerated 
+project toolchain "MDK-ARM V5" 
+project path "D:\Stm32f0DevelopDoc\Example\UseCubeTest1\RTE\Device\STM32F051R8Tx\" 
