@@ -1,0 +1,27 @@
+--cpu Cortex-M0
+"extinterrupt_catch\startup_stm32f051x8.o"
+"extinterrupt_catch\main.o"
+"extinterrupt_catch\stm32f0xx_it.o"
+"extinterrupt_catch\stm32f0xx_hal_msp.o"
+"extinterrupt_catch\stm32f0xx_hal_tim.o"
+"extinterrupt_catch\stm32f0xx_hal_tim_ex.o"
+"extinterrupt_catch\stm32f0xx_hal_uart.o"
+"extinterrupt_catch\stm32f0xx_hal_uart_ex.o"
+"extinterrupt_catch\stm32f0xx_hal_rcc.o"
+"extinterrupt_catch\stm32f0xx_hal_rcc_ex.o"
+"extinterrupt_catch\stm32f0xx_hal.o"
+"extinterrupt_catch\stm32f0xx_hal_i2c.o"
+"extinterrupt_catch\stm32f0xx_hal_i2c_ex.o"
+"extinterrupt_catch\stm32f0xx_hal_gpio.o"
+"extinterrupt_catch\stm32f0xx_hal_dma.o"
+"extinterrupt_catch\stm32f0xx_hal_cortex.o"
+"extinterrupt_catch\stm32f0xx_hal_pwr.o"
+"extinterrupt_catch\stm32f0xx_hal_pwr_ex.o"
+"extinterrupt_catch\stm32f0xx_hal_flash.o"
+"extinterrupt_catch\stm32f0xx_hal_flash_ex.o"
+"extinterrupt_catch\stm32f0xx_hal_exti.o"
+"extinterrupt_catch\system_stm32f0xx.o"
+--library_type=microlib --strict --scatter "extInterrupt_catch\extInterrupt_catch.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "extInterrupt_catch.map" -o extInterrupt_catch\extInterrupt_catch.axf
