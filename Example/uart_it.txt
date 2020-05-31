@@ -1,0 +1,6 @@
+uart IT 사용
+
+시작전에 HAL_UART_READ_IT 를 한번 선언해줘야 정상적으로 작동
+
+읽어들이는 값은 HAL_UART_READ_IT 를 이용하여 읽는다. 
+(기존 HAL_UART_READ 는 인터럽트로 작동되지 않는다.)

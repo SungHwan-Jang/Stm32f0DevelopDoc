@@ -1,0 +1,34 @@
+<TCNT 레지스터>
+
+16비트 타이머인 경우 2^16 - 1 = 65535 의 카운터를 셀 수 있다.
+AutoReloadRegister = Period 를 100으로 설정시
+100까지 세고 0으로 떨어지는 것을 반복한다.
+
+100까지 센 경우 -> UPDATE IT 발생
+
+<시간 설정 방법>
+AMBA (arm bus arch)
+
+클럭을 가정해 보자 (168Mhz)
+HCLK = 168Mhz
+APB1 = HCLK/2 = 84Mhz
+APB2 = 168Mhz
+
+해당 타이머가 어떠한 버스를 사용하는지 알아야한다.
+
+APB1을 타이머 버스로 사용하는 경우 1/84000000 s 로서 대략 11ns 마다 카운터가 1씩 올라간다.
+
+너무 자주 인터럽트가 발생되면, 인터럽트를 처리 하느라 다른 작업을 할 수 없다.
+따라서 Prescaler가 나온다 prescaler는 2^16-1 인 = 65535까지 설정이 가능하다.
+
+예를 들어 prescaler를 10000으로 설정한다면,
+TIMCLK = 84M/10000 = 1/8400s 마다 카운트가 1씩 올라간다.
+
+Period를 8400으로 지정시, 1초마다 UPDATE IT가 발생한다.
+
+
+<code>
+
+HAL_TIM_Base_Start_IT(timer address);
+HAL_TIM_Base_Stop_IT(timer address);
+timer start stop이 가능하다.

@@ -1,0 +1,70 @@
+STM 12bit resolution ADC 
+
+VREF는 칩 동작전압인 3.3V이다.
+0~ 4095 까지 4096 단계를 가진다.
+
+if ADC = 1500,
+ADC 1 단계당 전압 = VREF / Bit_resolution = 3.3V / 4096 = 0.806mV
+
+따라서 0.806 * 1500 = 1.209V
+
+==============================================
+기존 방식
+CPU clock 소모가 많다.
+
+uint16_t ADCval[4];
+
+Waiting_ADConversion(CH1);
+ADCVal[0] = ADC->DR; // CH1 결과 저장
+
+Waiting_ADConversion(CH2);
+ADCVal[1] = ADC->DR; // CH2 결과 저장
+
+Waiting_ADConversion(CH3);
+ADCVal[2] = ADC->DR; // CH3 결과 저장
+
+Waiting_ADConversion(CH4);
+ADCVal[3] = ADC->DR; // CH4 결과 저장
+
+================================================
+
+DMA 방식 (direct memory access)
+= AD 변환이 완료되면 ADC 결과를 DMA 컨트롤러가 자동으로 원하는 변수에 저장 
+(Peripheral to Memory) - DMA는 Mem to Mem 과 같은 방식도 존재한다.
+예를 들어 uart DMA를 사용시, 100바이트 수신한다고 한다면, 100바이트를 다 수신하면
+DMA 인터럽트를 날려주고 그 인터럽트로 데이터 처리를 하는 방식이 가능하다.
+
+uint16_t ADCval[4];
+ADCVal[0]  <==
+ADCVal[1]  <== DMA controller  <= ADC1->DR (peripheral)
+ADCVal[2]  <==
+ADCVal[3]  <== 
+
+
+[Cube Parameter 설정]
+Clock prescaler - datasheet의 나온 adc clock 주파수 설정
+dataAlignment - 12bit 이므로 오른쪽 정렬하면 0x0FFF 와 같이 나온다.
+scan conversion mode - adc 채널을 차례대로 읽을것인지
+continuois conversion mode - 예를들어 4개 채널을 읽고 난 후에 계속 또 읽을 건지.
+dma continuos requests - enable 해야 dma 사용가능
+sampling_time = 길면 길수록 좋다. (stm32F4 기준, 40Mhz clock에 12bit 변환은 15 cycle 소요.)
+(f0 기준, 4Mhz 기준 150 cycle... -> 239로 맞춰놈)  
+( cycle이 부족할 경우 노이즈 영향 및 다음 채널의 adc 변환 결과가 이상하게 나온다.)
+
+
+[DMA setting]
+DMA Request Settings의 mode를 circular로 해줘야 DMA 방식에서 0~3까지 읽고 다시 0~3까지 읽는 동작 가능
+(반복 저장 가능케 함)
+
+Increment Address 
+Peripheral check 시 -> ADC 모듈의 주소값을 하나씩 증가하여 사용할 것인지.
+(ADC1 모듈만 사용할 것이므로 증가시키면 안된다.)
+
+Memory check 시 -> 배열에 저장해야 하므로 체크를 하여 주소를 하나씩 증가시켜야 한다.
+
+Data width -> 데이터 길이 (half word - 16bit로 사용)
+
+M0의 경우, 무조건 32bit 크기이며 0x 0222 0111 형식으로 ch 1, 2 가 나뉜다. ( 0222-> ch2 0111 ->ch1)
+
+<code>
+adc convert data는 volatile를 붙여야 한다는점을 ! 
