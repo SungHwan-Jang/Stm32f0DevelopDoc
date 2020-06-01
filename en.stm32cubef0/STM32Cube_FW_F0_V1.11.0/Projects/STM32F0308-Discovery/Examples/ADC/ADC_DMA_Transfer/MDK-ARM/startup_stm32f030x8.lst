@@ -342,11 +342,11 @@ ARM Macro Assembler    Page 6
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
 ork --depend=stm32f0308-discovery\startup_stm32f030x8.d -ostm32f0308-discovery\
 startup_stm32f030x8.o -I.\RTE\_STM32F0308-Discovery -IC:\Users\Almus\AppData\Lo
-cal\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include -IC:\Users\Almus\AppData\Local
-\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include -
--predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISI
-ON_VERSION SETA 528" --predefine="_RTE_ SETA 1" --predefine="STM32F030x8 SETA 1
-" --list=startup_stm32f030x8.lst startup_stm32f030x8.s
+cal\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -IC:\Users\Almus\AppData\Local
+\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include -
+-predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 528" --prede
+fine="_RTE_ SETA 1" --predefine="STM32F030x8 SETA 1" --list=startup_stm32f030x8
+.lst startup_stm32f030x8.s
 
 
 
@@ -822,4 +822,4 @@ Symbol: __main
       At line 121 in file startup_stm32f030x8.s
 Comment: __main used once
 2 symbols
-384 symbols in table
+383 symbols in table

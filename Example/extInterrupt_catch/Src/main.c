@@ -248,8 +248,8 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /*
-	if you use EXTI interrupt and called this,
-	this EXTI loop need to add delay() and do not return main loop. check it.
+	__weak function copy and paste at stm32_it.c
+	and modify this.
 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
