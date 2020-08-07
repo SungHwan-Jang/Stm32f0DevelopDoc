@@ -90,7 +90,7 @@ ARM Macro Assembler    Page 2
    58 00000000                 EXPORT           __Vectors
    59 00000000                 EXPORT           __Vectors_End
    60 00000000                 EXPORT           __Vectors_Size
-   61 00000000         
+   61 00000000         ; DCD function is making interrupt vector table.
    62 00000000 00000000 
                        __Vectors
                                DCD              __initial_sp ; Top of Stack
@@ -363,10 +363,10 @@ ARM Macro Assembler    Page 6
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
 ork --depend=exti\startup_stm32f051x8.d -oexti\startup_stm32f051x8.o -I.\RTE\_E
-XTI -IC:\Users\redmk\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
- -IC:\Users\redmk\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSI
+XTI -IC:\Users\Almus\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+ -IC:\Users\Almus\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSI
 S\Device\ST\STM32F0xx\Include --predefine="__MICROLIB SETA 1" --predefine="__UV
-ISION_VERSION SETA 529" --predefine="_RTE_ SETA 1" --predefine="STM32F051x8 SET
+ISION_VERSION SETA 528" --predefine="_RTE_ SETA 1" --predefine="STM32F051x8 SET
 A 1" --list=startup_stm32f051x8.lst startup_stm32f051x8.s
 
 

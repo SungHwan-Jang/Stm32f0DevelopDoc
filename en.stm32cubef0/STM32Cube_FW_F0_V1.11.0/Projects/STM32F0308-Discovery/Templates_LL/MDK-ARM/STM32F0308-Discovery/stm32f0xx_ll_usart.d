@@ -1,0 +1,12 @@
+stm32f0308-discovery\stm32f0xx_ll_usart.o: ../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usart.c
+stm32f0308-discovery\stm32f0xx_ll_usart.o: ../../../../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usart.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: ../../../../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: ../../../../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f030x8.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: C:\Users\Almus\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm0.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: C:\Users\Almus\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: C:\Users\Almus\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: C:\Users\Almus\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: ../../../../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: ../../../../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h
+stm32f0308-discovery\stm32f0xx_ll_usart.o: ../../../../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h

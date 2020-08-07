@@ -1,0 +1,11 @@
+--cpu Cortex-M0
+"stm32f072rb-nucleo\system_stm32f0xx.o"
+"stm32f072rb-nucleo\stm32f0xx_ll_gpio.o"
+"stm32f072rb-nucleo\stm32f0xx_ll_utils.o"
+"stm32f072rb-nucleo\startup_stm32f072xb.o"
+"stm32f072rb-nucleo\main.o"
+"stm32f072rb-nucleo\stm32f0xx_it.o"
+--library_type=microlib --strict --scatter "STM32F072RB-Nucleo\STM32F072RB-Nucleo.sct"
+--diag_suppress=L6329 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "STM32F072RB-Nucleo.map" -o STM32F072RB-Nucleo\STM32F072RB-Nucleo.axf

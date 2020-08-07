@@ -1,0 +1,16 @@
+stm32f072rb-nucleo\stm32f0xx_it.o: ../Src/stm32f0xx_it.c
+stm32f072rb-nucleo\stm32f0xx_it.o: ../Inc/stm32f0xx_it.h
+stm32f072rb-nucleo\stm32f0xx_it.o: ../Inc/main.h
+stm32f072rb-nucleo\stm32f0xx_it.o: ../../../../../../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h
+stm32f072rb-nucleo\stm32f0xx_it.o: ../../../../../../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
+stm32f072rb-nucleo\stm32f0xx_it.o: ../../../../../../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f051x8.h
+stm32f072rb-nucleo\stm32f0xx_it.o: C:\Users\Almus\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm0.h
+stm32f072rb-nucleo\stm32f0xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f072rb-nucleo\stm32f0xx_it.o: C:\Users\Almus\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h
+stm32f072rb-nucleo\stm32f0xx_it.o: C:\Users\Almus\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h
+stm32f072rb-nucleo\stm32f0xx_it.o: C:\Users\Almus\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h
+stm32f072rb-nucleo\stm32f0xx_it.o: ../../../../../../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h
+stm32f072rb-nucleo\stm32f0xx_it.o: ../../../../../../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h
+stm32f072rb-nucleo\stm32f0xx_it.o: ../../../../../../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h
+stm32f072rb-nucleo\stm32f0xx_it.o: ../../../../../../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_utils.h
+stm32f072rb-nucleo\stm32f0xx_it.o: ../../../../../../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h
