@@ -27,6 +27,10 @@ void SystemClock_Config(void);
 void bsp_led_config(void);
 void uart1_config(void);
 
+__asm void HardFault_Handler(void){
+	BX	R2
+}
+
 static void Thread1(void const *argument){
 	
 	(void) argument;
@@ -62,6 +66,7 @@ static void Thread2(void const *argument){
 #if DEBUG
 		sprintf((char*) th2TxBuffer, "// THREAD 2 RUNNING //\n\r");
 		HAL_UART_Transmit(&UartHandle, (uint8_t*)th2TxBuffer, sizeof(th2TxBuffer), 2);
+		
 #endif
 	}
 }

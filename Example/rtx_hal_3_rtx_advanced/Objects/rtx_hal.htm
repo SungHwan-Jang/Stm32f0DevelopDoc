@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\rtx_hal.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\rtx_hal.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Aug 07 16:02:42 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Aug 10 19:28:59 2020
 <BR><P>
 <H3>Maximum Stack Usage =        232 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -20,7 +20,6 @@ Functions with no stack information
 Mutually Recursive functions
 </H3> <LI><a href="#[8f]">os_error</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8f]">os_error</a><BR>
  <LI><a href="#[7]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[7]">NMI_Handler</a><BR>
- <LI><a href="#[8]">HardFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8]">HardFault_Handler</a><BR>
  <LI><a href="#[18]">ADC1_COMP_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[18]">ADC1_COMP_IRQHandler</a><BR>
  <LI><a href="#[39]">os_idle_demon</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[39]">os_idle_demon</a><BR>
 </UL>
@@ -37,7 +36,7 @@ Function Pointers
  <LI><a href="#[12]">EXTI2_3_IRQHandler</a> from startup_stm32f051x8.o(.text) referenced from startup_stm32f051x8.o(RESET)
  <LI><a href="#[13]">EXTI4_15_IRQHandler</a> from startup_stm32f051x8.o(.text) referenced from startup_stm32f051x8.o(RESET)
  <LI><a href="#[f]">FLASH_IRQHandler</a> from startup_stm32f051x8.o(.text) referenced from startup_stm32f051x8.o(RESET)
- <LI><a href="#[8]">HardFault_Handler</a> from startup_stm32f051x8.o(.text) referenced from startup_stm32f051x8.o(RESET)
+ <LI><a href="#[8]">HardFault_Handler</a> from main.o(.emb_text) referenced from startup_stm32f051x8.o(RESET)
  <LI><a href="#[22]">I2C1_IRQHandler</a> from startup_stm32f051x8.o(.text) referenced from startup_stm32f051x8.o(RESET)
  <LI><a href="#[23]">I2C2_IRQHandler</a> from startup_stm32f051x8.o(.text) referenced from startup_stm32f051x8.o(RESET)
  <LI><a href="#[7]">NMI_Handler</a> from startup_stm32f051x8.o(.text) referenced from startup_stm32f051x8.o(RESET)
@@ -228,6 +227,9 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
 
+<P><STRONG><a name="[8]"></a>HardFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(.emb_text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f051x8.o(RESET)
+</UL>
 <P><STRONG><a name="[4b]"></a>_platform_post_lib_init</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, rtx_conf_cm.o(.emb_text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108 + Unknown Stack Size
 <LI>Call Chain = _platform_post_lib_init &rArr; osKernelInitialize &rArr; svcKernelInitialize &rArr; svcThreadCreate &rArr; rt_tsk_create &rArr; rt_init_context &rArr; rt_init_stack
@@ -293,13 +295,6 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f051x8.o(RESET)
-</UL>
-<P><STRONG><a name="[8]"></a>HardFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_stm32f051x8.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f051x8.o(RESET)
 </UL>
